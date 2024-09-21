@@ -1,0 +1,123 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.net.URL?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ButtonBar?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.Tooltip?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.ColumnConstraints?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.RowConstraints?>
+<?import mx.unam.ciencias.icc.igu.EntradaVerificable?>
+
+<AnchorPane xmlns:fx="http://javafx.com/fxml"
+            fx:controller="mx.unam.ciencias.icc.igu.ControladorFormaEditaMascota"
+            prefWidth="360.0" prefHeight="280.0">
+  <stylesheets>
+    <URL value="@style.css" />
+  </stylesheets>
+  <children>
+    <GridPane prefWidth="360.0" prefHeight="120.0"
+              AnchorPane.leftAnchor="10.0"
+              AnchorPane.rightAnchor="10.0"
+              AnchorPane.topAnchor="10.0"
+              AnchorPane.bottomAnchor="10.0" >
+      <columnConstraints>
+        <ColumnConstraints prefWidth="90.0" />
+        <ColumnConstraints prefWidth="250.0" />
+      </columnConstraints>
+      <rowConstraints>
+        <RowConstraints prefHeight="30.0" />
+        <RowConstraints prefHeight="30.0" />
+        <RowConstraints prefHeight="30.0" />
+        <RowConstraints prefHeight="30.0" />
+        <RowConstraints prefHeight="30.0" />
+        <RowConstraints prefHeight="30.0" />
+        <RowConstraints prefHeight="30.0" />
+      </rowConstraints>
+      <children>
+        <Label GridPane.columnIndex="0" GridPane.rowIndex="0"
+               text="Nombre:"/>
+        <Label GridPane.columnIndex="0" GridPane.rowIndex="1"
+               text="Propietario:" />
+        <Label GridPane.columnIndex="0" GridPane.rowIndex="2"
+               text="Especie:"/>
+        <Label GridPane.columnIndex="0" GridPane.rowIndex="3"
+               text="Sexo:"/>
+        <Label GridPane.columnIndex="0" GridPane.rowIndex="4"
+               text="Peso(kg):" />
+        <Label GridPane.columnIndex="0" GridPane.rowIndex="5"
+               text="Edad:"/>
+        <Label GridPane.columnIndex="0" GridPane.rowIndex="6"
+               text="Temperatura(°C):"/>
+        <EntradaVerificable fx:id="entradaNombre"
+                            style="-fx-background-color:FFCCCC;"
+                            GridPane.columnIndex="1"
+                            GridPane.rowIndex="0">
+          <tooltip>
+            <Tooltip text="El nombre no puede ser vacío"/>
+          </tooltip>
+        </EntradaVerificable>
+        <EntradaVerificable fx:id="entradaPropietario"
+                            style="-fx-background-color:FFCCCC;"
+                            GridPane.columnIndex="1"
+                            GridPane.rowIndex="1">
+          <tooltip>
+            <Tooltip text="El nombre del propietario no puede ser vacío"/>
+          </tooltip>
+        </EntradaVerificable>
+        <EntradaVerificable fx:id="entradaEspecie"
+                            style="-fx-background-color:FFCCCC;"
+                            GridPane.columnIndex="1"
+                            GridPane.rowIndex="2">
+          <tooltip>
+            <Tooltip text="La especie no puede ser vacío"/>
+          </tooltip>
+        </EntradaVerificable>
+        <EntradaVerificable fx:id="entradaSexo"
+                            style="-fx-background-color:FFCCCC;"
+                            GridPane.columnIndex="1"
+                            GridPane.rowIndex="3">
+          <tooltip>
+            <Tooltip text="F(Femenino) / M(Masculino)"/>
+          </tooltip>
+        </EntradaVerificable>
+        <EntradaVerificable fx:id="entradaPeso"
+                            style="-fx-background-color:FFCCCC;"
+                            GridPane.columnIndex="1"
+                            GridPane.rowIndex="4">
+          <tooltip>
+            <Tooltip text="El peso debe ser mayor a 0"/>
+          </tooltip>
+        </EntradaVerificable>
+        <EntradaVerificable fx:id="entradaEdad"
+                            style="-fx-background-color:FFCCCC;"
+                            GridPane.columnIndex="1"
+                            GridPane.rowIndex="5">
+          <tooltip>
+            <Tooltip text="La edad debe ser mayor a 0"/>
+          </tooltip>
+        </EntradaVerificable>
+        <EntradaVerificable fx:id="entradaTemp"
+                            style="-fx-background-color:FFCCCC;"
+                            GridPane.columnIndex="1"
+                            GridPane.rowIndex="6">
+          <tooltip>
+            <Tooltip text="La temperatura debe ser mayor a 0.0°"/>
+          </tooltip>
+        </EntradaVerificable>
+      </children>
+    </GridPane>
+    <ButtonBar AnchorPane.bottomAnchor="10.0"
+               AnchorPane.rightAnchor="10.0">
+      <buttons>
+        <Button fx:id="botonAceptar" disable="true"
+                onAction="#aceptar" text="Aceptar"
+                prefWidth="120.0" />
+        <Button onAction="#cancelar" text="Cancelar"
+                prefWidth="120.0" defaultButton="true" />
+      </buttons>
+    </ButtonBar>
+  </children>
+</AnchorPane>
